@@ -1,7 +1,7 @@
 NAME:=ClapTrap
 CXXFLAGS:= -Wall -Werror -Wextra -std=c++98
 CXX:= c++
-SRC:= main.cpp ClapTrap.cpp 
+SRC:= main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ:=$(patsubst %.cpp, %.o, $(SRC))
 
 all: ${NAME}

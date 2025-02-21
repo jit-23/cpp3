@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-jesu <fde-jesu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 03:12:59 by fde-jesu          #+#    #+#             */
-/*   Updated: 2025/02/18 17:55:30 by fde-jesu         ###   ########.fr       */
+/*   Created: 2025/02/18 18:02:17 by fde-jesu          #+#    #+#             */
+/*   Updated: 2025/02/21 03:42:30 by fde-jesu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int main()
+#include "ClapTrap.hpp"
+#include <iostream>
+#include <cstring>
+#include <cctype>
+
+class ScavTrap : public ClapTrap
 {
-	ClapTrap dude1;
-	ClapTrap dude2(dude1);
-	dude1.attack("dude2");
-	dude2.attack("dude1");
-	dude1.takeDamage(3);
-	dude2.takeDamage(10);
-	return 0;
-}
+private:
+	
+public:
+	ScavTrap(void);
+	ScavTrap(ScavTrap& other);
+	ScavTrap(std::string name);
+	~ScavTrap();
+	ScavTrap& operator=(const ScavTrap &other);
+	
+	void guardGate();
+};
+
+#endif
